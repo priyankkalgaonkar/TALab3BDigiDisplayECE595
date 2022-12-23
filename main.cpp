@@ -2,9 +2,7 @@
 #include "DigitDisplay.h"
 
 DigitalOut myled(LED1);
-
 DigitDisplay display(D2, D3);
-
 Ticker tick;
 
 uint8_t hour   = 20;
@@ -46,8 +44,8 @@ int main() {
     tick.attach(&beat, 0.5);
     while(1) {
         myled = 1;
-        wait(0.5);
+        wait_us(500000);
         myled = 0;
-        wait(0.5);
+        wait_us(500000);
     }
 }
